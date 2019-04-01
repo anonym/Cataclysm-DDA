@@ -72763,7 +72763,7 @@
           "rotates": false
         },
         {
-          "id": "cannabis",
+          "id": ["cannabis", "gp_cannabis_ready"],
           "fg": 1699
         },
         {
@@ -118375,7 +118375,7 @@
           "rotates": false
         },
 				{
-          "id": ["gp_pot"],
+          "id": ["gp_pot", "gp_cannabis"],
           "fg": 23666,
 		  "bg": 0,
           "rotates": false

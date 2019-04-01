@@ -325,5 +325,29 @@
     "name_plural": "garden pots (ripe garlic)",
     "description": "This is a garden pot containing pungent garlic bulbs.  Disassemble to harvest them, or wave it at vampires to scare them.",
     "copy-from": "gp_pot_grown"
+  },
+  {
+    "type": "GENERIC",
+    "id": "gp_cannabis",
+    "name": "garden pot (growing cannabis)",
+    "name_plural": "garden pots (growing cannabis)",
+    "description": "This is a garden pot growing cannabis.  Once flowering, it can be activated to prepare it for harvest.",
+    "copy-from": "gp_pot_growing",
+    "use_action": {
+      "type": "delayed_transform",
+      "transform_age": 432000,
+      "not_ready_msg": "It isn't done growing yet.",
+      "msg": "The cannabis is ready to harvest!",
+      "moves": 0,
+      "target": "gp_cannabis_ready"
+    }
+  },
+  {
+    "type": "GENERIC",
+    "id": "gp_cannabis_ready",
+    "name": "garden pot (ripe cannabis)",
+    "name_plural": "garden pots (ripe cannabis)",
+    "description": "This is a garden pot containing pungent, flowering cannabis.  Disassemble to harvest them.",
+    "copy-from": "gp_pot_grown"
   }
 ]

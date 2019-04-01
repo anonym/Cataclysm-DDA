@@ -252,5 +252,25 @@
     "skill_used": "survival",
     "time": 500,
     "components": [ [ [ "gp_pot", 1 ] ], [ [ "garlic", 20 ] ] ]
+  },
+  {
+    "type": "recipe",
+    "result": "gp_cannabis",
+    "category": "CC_OTHER",
+    "subcategory": "CSC_OTHER_OTHER",
+    "skill_used": "survival",
+    "difficulty": 1,
+    "time": 500,
+    "autolearn": true,
+    "components": [ [ [ "gp_pot", 1 ] ], [ [ "seed_weed", 1 ] ], [ [ "water", 1 ], [ "water_clean", 1 ] ] ]
+  },
+  {
+    "type": "uncraft",
+    "result": "gp_cannabis_ready",
+    "category": "CC_FOOD",
+    "subcategory": "CSC_OTHER_OTHER",
+    "skill_used": "survival",
+    "time": 500,
+    "components": [ [ [ "gp_pot", 1 ] ], [ [ "cannabis", 1 ] ] ]
   }
 ]
