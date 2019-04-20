@@ -6481,6 +6481,9 @@ look_around_result game::look_around( catacurses::window w_info, tripoint &cente
     ctxt.register_action( "SELECT" );
     if( peeking ) {
         ctxt.register_action( "throw_blind" );
+    } else {
+        ctxt.register_action( "fire" );
+        ctxt.register_action( "throw" );
     }
     if( !select_zone ) {
         ctxt.register_action( "TRAVEL_TO" );
@@ -6671,6 +6674,14 @@ look_around_result game::look_around( catacurses::window w_info, tripoint &cente
             if( select_zone && has_first_point ) { // is blinking
                 blink = true; // Always draw blink symbols when moving cursor
             }
+        } else if( action == "fire" ) {
+            u.last_target_pos = g->m.getabs( lp );
+            plfire( u.weapon );
+            break;
+        } else if( action == "throw" ) {
+            u.last_target_pos = g->m.getabs( lp );
+            plthrow( INT_MIN );
+            break;
         } else if( action == "throw_blind" ) {
             result.peek_action = PA_BLIND_THROW;
         } else if( action == "zoom_in" ) {
