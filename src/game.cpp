@@ -6678,14 +6678,16 @@ look_around_result game::look_around( catacurses::window w_info, tripoint &cente
             if( select_zone && has_first_point ) { // is blinking
                 blink = true; // Always draw blink symbols when moving cursor
             }
-        } else if( action == "fire" ) {
+        } else if( action == "fire" || action == "throw" ) {
             u.last_target_pos = g->m.getabs( lp );
-            if( try_fire() ) {
-                break;
+            u.last_target.reset();
+            bool fired = false;
+            if( action == "fire" ) {
+                fired = try_fire();
+            } else {
+                fired = plthrow( INT_MIN );
             }
-        } else if( action == "throw" ) {
-            u.last_target_pos = g->m.getabs( lp );
-            if( plthrow( INT_MIN ) ) {
+            if( fired || u.activity.id() == activity_id( "ACT_AIM" ) ) {
                 break;
             }
         } else if( action == "throw_blind" ) {
